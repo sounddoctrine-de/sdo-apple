@@ -1,8 +1,0 @@
----
-library: false
-warnOnImplicitThis: false
-compileForOverlayEval: false
-name: getting-started/queries-swift
-version: 1.0.0
-dependencies:
-  codeql/swift-all: ^5.0.0

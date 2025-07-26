@@ -1,20 +1,28 @@
-# Xcode
-# Build, test, and archive an Xcode workspace on macOS.
-# Add steps that install certificates, test, sign, and distribute an app, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
-
 trigger:
 - main
 
 pool:
   vmImage: 'macos-latest'
 
+variables:
+- group: appstoreconnect
+
 steps:
-- task: Xcode@5
+- task: UseRubyVersion@0
   inputs:
-    actions: 'build'
-    scheme: 'SDO (iOS)'
-    sdk: 'iphoneos'
-    configuration: 'Release'
-    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-    xcodeVersion: 'default' # Options: 11, 12, 13, 14, 15, default, specifyPath
+    versionSpec: '>= 2.7'
+  displayName: 'Select Ruby version'
+
+- script: |
+    gem install bundler
+    cd fastlane
+    bundle install
+  displayName: 'Install Bundler and Gems'
+
+- script: |
+    bundle exec fastlane ios release
+  displayName: 'Build and Upload iOS App via Fastlane'
+  env:
+    APP_STORE_CONNECT_API_KEY_ID: $(APP_STORE_CONNECT_API_KEY_ID)
+    APP_STORE_CONNECT_API_ISSUER_ID: $(APP_STORE_CONNECT_API_ISSUER_ID)
+    APP_STORE_CONNECT_API_KEY_CONTENT: $(APP_STORE_CONNECT_API_KEY_CONTENT)

@@ -1,5 +1,0 @@
-cocoindex>=0.1.42
-python-dotenv>=1.0.1
-psycopg_pool
-psycopg
-numpy<2

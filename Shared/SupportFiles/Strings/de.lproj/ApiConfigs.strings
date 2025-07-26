@@ -1,9 +1,0 @@
-/* 
-  configs.strings
-  SDO
-
-  Created by Joel Kingsley on 06/10/2022.
-  
-*/
-
-"googleCloudStorageUrl %@ %@" = "https://storage.googleapis.com/%@/%@";

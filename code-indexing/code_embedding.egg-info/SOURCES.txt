@@ -1,6 +1,0 @@
-pyproject.toml
-code_embedding.egg-info/PKG-INFO
-code_embedding.egg-info/SOURCES.txt
-code_embedding.egg-info/dependency_links.txt
-code_embedding.egg-info/requires.txt
-code_embedding.egg-info/top_level.txt

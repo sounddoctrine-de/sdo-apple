@@ -2,6 +2,27 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+# General
+SDOMultiplatform/*.iml
+SDOMultiplatform/.kotlin
+SDOMultiplatform/.gradle
+SDOMultiplatform/**/build/
+SDOMultiplatform/xcuserdata
+!src/**/build/
+SDOMultiplatform/local.properties
+SDOMultiplatform/.idea
+SDOMultiplatform/.DS_Store
+SDOMultiplatform/captures
+SDOMultiplatform/.externalNativeBuild
+SDOMultiplatform/.cxx
+SDOMultiplatform/*.xcodeproj/*
+SDOMultiplatform/!*.xcodeproj/project.pbxproj
+SDOMultiplatform/!*.xcodeproj/xcshareddata/
+SDOMultiplatform/!*.xcodeproj/project.xcworkspace/
+SDOMultiplatform/!*.xcworkspace/contents.xcworkspacedata
+SDOMultiplatform/**/xcshareddata/WorkspaceSettings.xcsettings
+
+
 ## User settings
 xcuserdata/
 
